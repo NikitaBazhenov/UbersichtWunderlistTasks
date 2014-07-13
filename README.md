@@ -1,4 +1,4 @@
-![Wunderlist Tasks widget for Übersicht](https://raw.githubusercontent.com/NikitaBazhenov/UbersichtWunderlistTasks/screenshot.jpg)
+![Wunderlist Tasks widget for Übersicht](https://raw.githubusercontent.com/NikitaBazhenov/UbersichtWunderlistTasks/master/screenshot.jpg)
 
 # Wunderlist Tasks widget for Übersicht
 
