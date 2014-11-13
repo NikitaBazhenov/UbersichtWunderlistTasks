@@ -79,7 +79,7 @@ render: (_) -> """
 	<div class='to-do-wrap'></div>
 """
 
-api: "http://api.wunderlist.com"
+api: "https://api.wunderlist.com"
 
 command: ""
 
