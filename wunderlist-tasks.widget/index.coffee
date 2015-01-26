@@ -11,6 +11,11 @@ showListsNames: true, # true / false
 #Example: ['Inbox', 'Products', 'Starred']
 showLists: [] #show all by default
 
+#Show only a certain number of tasks from a specific list
+iNumbers: 
+	'ListsName': 2
+#	'Products': 1
+
 # Set the refresh frequency (milliseconds).
 refreshFrequency: 1000 * 60	#1 minute
 
@@ -174,12 +179,15 @@ buildTree: () ->
 		}]
 	lists = lists.concat @_sort(@lists)
 	tasks = @_sort @tasks
+	iNumbers = @iNumbers
 	
 	lists.forEach (l) =>
 		tasksArr = []
+		n = 0
 		tasks.forEach (t) ->
-			if (t.completed_at == null && (l.id == t.list_id || (l.id == 'starred' && t.starred) || (l.id == 'assigned_to_me' && t.assignee_id != null)))
+			if ((!iNumbers[l.title] || n < iNumbers[l.title]) && t.completed_at == null && (l.id == t.list_id || (l.id == 'starred' && t.starred) || (l.id == 'assigned_to_me' && t.assignee_id != null)))
 				tasksArr.push t.title
+				n++;
 		tree[l.title] = tasksArr
 
 	@tree = tree		

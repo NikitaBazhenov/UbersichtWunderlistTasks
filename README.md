@@ -34,3 +34,8 @@ Getting Started
         #Show lists by names
         #Example: ['Inbox', 'Products', 'Starred']
         showLists: [] #show all by default
+		
+		#Show only a certain number of tasks from a specific list
+		iNumbers: 
+			'ListsName': 2
+			'Products': 1
